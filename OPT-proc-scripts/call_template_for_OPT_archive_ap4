@@ -1,0 +1,27 @@
+begin
+	stash=(2,3)
+	year=[1995..2016]
+end
+
+# Ozone, 34001
+# Carbon Monoxide, 34010
+# Nitrogen oxides,  34002
+# Nitrogen dioxyde, 34996 
+# Formaldehyde, 34011
+# Isoprene, 34027
+# VOCs with highest Photochemical Ozone Chemical Potential ?
+# Hydroxyl Radical, 34081
+# Methane, 34009
+# Latitude
+# Longitude
+# Pressure, 408
+# Winds (u & v), 2,3
+# Relative Humidity, 10
+# Vertical wind, 150
+# Grid box height
+# grid box size
+# Tropopause height, 30453
+# Temperature profile, 16004
+# Air mass, 50063
+# Mean meridional stream function at 500hPa
+# Maximum in 850hPa zonal-mean zonal wind occurs  
