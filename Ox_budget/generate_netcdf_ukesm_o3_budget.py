@@ -10,7 +10,7 @@ jobid=sys.argv[1]
 disk=sys.argv[2] 
 
 outputdir=disk+jobid+'/netcdf_trop_ox_budget/'
-inputdir= disk+jobid+'/pp_files_ox_eval_py/'
+inputdir= disk+jobid+'/pp_files_ox_eval_pm/'
 if not os.path.exists(outputdir):
     os.makedirs(outputdir)
 
@@ -36,7 +36,8 @@ print ('\n'+jobid+'\npm')
 # prepare STASH codes
 path_to_files=inputdir+'/'+jobid+'a.pm'
 for z in range(0,len(stash_list)):
-  for decade in np.arange(200,202):
+  # for decade in np.arange(200,202):
+  for decade in np.arange(199,202):
    decade = str(decade) 
    stash=[]
    field_constr=[]

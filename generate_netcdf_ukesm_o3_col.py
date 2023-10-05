@@ -36,7 +36,7 @@ print ('\n'+jobid+'\npm')
 # prepare STASH codes
 path_to_files=inputdir+'/'+jobid+'a.pm'
 for z in range(0,len(stash_list)):
-  for decade in np.arange(199,202):
+  for decade in np.arange(199,200):
    decade = str(decade) 
    stash=[]
    field_constr=[]

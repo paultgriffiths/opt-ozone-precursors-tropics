@@ -12,6 +12,7 @@ else
 	cd ${zzTempDir}
 	/opt/moose/external-client-version-wrapper/bin/moo select -f call_template_for_OPT_archive_pm moose:crum/${zzJobID}/apm.pp ./
 
+	cd /home/users/ptg21/OPT/OPT-proc-scripts/
 	echo $1
 	declare -a zzJobID=$1
 	declare -a zzTempDir=/work/scratch-pw2/ptg21/${zzJobID}/pp_files_for_OPT_archive_ap4/

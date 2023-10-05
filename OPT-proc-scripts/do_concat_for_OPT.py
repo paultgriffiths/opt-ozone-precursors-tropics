@@ -1,6 +1,6 @@
 import xarray as xr
 
-disk="/work/scratch-pw2/ptg21/u-cq029/netcdf_OPT/"
+disk="/work/scratch-pw2/ptg21/u-cq330/netcdf_OPT/"
 
 vars = [
   'mass_fraction_of_isoprene_in_air',
@@ -26,36 +26,36 @@ conv_factors = {'mass_fraction_of_isoprene_in_air': 0.4252011156782149,
                 'mass_fraction_of_hydroxyl_radical_in_air': 1.7031046039865936}
 
 varc=0
-for var in ["c5h8", "ch4", "co",  "hcho", "no2", "no", "o3", "oh"]:
-#for var in ["ch4"]:
-  vari=vars[varc]
-  print(vari)
-  print('open')
-  conv = conv_factors[vari]
-  data = xr.open_mfdataset(disk+'/BASE'+'_*_'+var+'.nc')
-  new_data = data.copy(deep=True)
-  new_data[vari].data = new_data[vari].data * conv
-  new_data[vari].compute()
-  print('save')
-  new_data.to_netcdf(disk+'/GLOBAL_ANTHRO_'+var+'_vmr_1995_2015.nc')
-  varc=varc+1
- 
-#vars = [
-#  "eastward_wind",#u
-#  "northward_wind",#v
-#  'atmosphere_mass_per_gridbox',
-#  "air_pressure",
-#  "air_temperature",
-#  "tropopause_altitude"]
-#  
-#varc=0
-#for var in [ "u", "v", "air_mass", "p", "temp","tropopause_ht",]:
+#for var in ["c5h8", "ch4", "co",  "hcho", "no2", "no", "o3", "oh"]:
+##for var in ["ch4"]:
 #  vari=vars[varc]
-#  print(var)
+#  print(vari)
 #  print('open')
-#  data = xr.open_mfdataset(disk+'/GLOBAL_ANTHRO'+'_*_'+var+'.nc')
+#  conv = conv_factors[vari]
+#  data = xr.open_mfdataset(disk+'/ANTHRO_TROPICS_CONSTANT'+'_*_'+var+'.nc')
 #  new_data = data.copy(deep=True)
+#  new_data[vari].data = new_data[vari].data * conv
 #  new_data[vari].compute()
 #  print('save')
-#  data.to_netcdf(disk+'/GLOBAL_ANTHRO_'+var+'_1995_2015.nc')
+#  new_data.to_netcdf(disk+'/ANTHRO_TROPICS_CONSTANT_'+var+'_vmr_1995_2015.nc')
 #  varc=varc+1
+# 
+vars = [
+  "eastward_wind",#u
+  "northward_wind",#v
+  'atmosphere_mass_per_gridbox',
+  "air_pressure",
+  "air_temperature",
+  "tropopause_altitude"]
+  
+varc=0
+for var in [ "u", "v", "air_mass", "p", "temp","tropopause_ht",]:
+  vari=vars[varc]
+  print(var)
+  print('open')
+  data = xr.open_mfdataset(disk+'/ANTHRO_TROPICS_CONSTANT'+'_*_'+var+'.nc')
+  new_data = data.copy(deep=True)
+  new_data[vari].compute()
+  print('save')
+  data.to_netcdf(disk+'/ANTHRO_TROPICS_CONSTANT_'+var+'_1995_2015.nc')
+  varc=varc+1

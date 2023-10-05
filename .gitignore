@@ -127,3 +127,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+call_template_for_OPT_archive_pm
